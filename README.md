@@ -1,14 +1,52 @@
-# grep-crawler
-golang grep crawler 
+# Go Grep Tool
 
-We start by defining the initial URL to begin crawling from.
+A Go command-line tool that searches for a specified pattern in directories, excluding the `.git` directory.
 
-We maintain a map visited to keep track of visited URLs and a channel queue to manage the URLs to be crawled.
+## Table of Contents
 
-We initiate the crawling process by sending the initial URL to the queue.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Contributing](#contributing)
+- [License](#license)
 
-We use a goroutine to process URLs from the queue. For each URL, we fetch its content using http.Get, parse the HTML using html.NewTokenizer, and extract links.
+## Installation
 
-We ensure that we only process links that haven't been visited before and add them back to the queue for further crawling.
+To use the Go Grep Tool, you need to have Go installed on your system.
 
-This is a very basic web crawler 
+1. Clone this repository or download the source code.
+
+```shell
+git clone https://github.com/rajibmitra/grep-crawler.git
+
+cd grep-crawler
+
+go build . 
+
+```
+
+## Usage
+
+The Go Grep Tool allows you to search for a specific pattern in directories while excluding the .git directory. Here's the basic usage:
+
+```shell
+
+./grep-crawler <pattern> <directory1> [directory2...]
+
+```
+
+<pattern>: The pattern you want to search for.
+
+<directory1> [directory2...]: One or more directories where you want to search.
+
+## Examples
+
+Search for the pattern "searchme" in the "project" directory:
+
+## Contributing
+
+Contributions are welcome! If you find a bug or have an enhancement in mind, please open an issue or submit a pull request.
+
+## License 
+
+This project is licensed under the MIT License.
